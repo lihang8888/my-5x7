@@ -213,7 +213,7 @@ modcp: mod_copy {
             bindings = < 
 &none        &none        &none        &mmv MMV_U        &none      &none    &none    &none       &none   &none        &none        &mwh MWH_U       &none        &none
  &none        &none      &mmv MMV_L    &mmv MMV_D    &mmv MMV_R      &none   &none    &none       &none  &mwh MWH_L  &mwh MWH_D  &mwh MWH_R      &none  &none 
- &none        &none        &none        &none        &none        &none    &none &none      &noneB  &none        &none        &none        &none        &none
+ &none        &none        &none        &none        &none        &none    &none &none       &none  &none        &none        &none        &none        &none
  &none        &none        &none        &none        &none        &none                      &none  &none        &none        &none        &none        &none
                            &none        &none        &none        &none                             &none        &none        &none        &none
                            &none        &none        &none        &none                             &none        &none        &none        &none
