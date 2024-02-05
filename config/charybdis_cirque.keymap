@@ -161,11 +161,12 @@ modcp: mod_copy {
        default_layer {
             label = "DEFAULT";
             bindings = <
-   &lt 3 ESC AS(Q) AS(W) AS(E) AS(R) AS(T)           AS(Y) AS(U) AS(I)     AS(O)   AS(P)  AS(MINUS) 
-   &kp ENTER AS(A) AS(S) AS(D) AS(F) AS(G)     AS(H) AS(J) AS(K)     AS(L)  AS(SEMI)    AS(SQT) 
-   &kp CAPS  AS(Z) AS(X) AS(C) AS(V) AS(B)                 AS(N) AS(M) AS(COMMA) AS(DOT) AS(FSLH)   AS(BSLH) 
- &kp LC(C) &kp LC(V) &kp BSPC &kp SPACE     &lt 2 LEFT  &lt 1 RIGHT    AS(LBKT)   AS(RBKT)      
- &kp LALT  &kp LALT &mt LCTRL  LSHFT  &lt 1  DEL     &kp LGUI   AS(EQUAL)   &mo 3   &mo 3        
+   &kp GRAVE      &kp N1     &kp N2     &kp N3     &kp N4     &kp N5     &kp N1    &kp N1    &kp N6     &kp N7     &kp N8     &kp N9     &kp N0     &kp BSPC
+   &lt 2 TAB      &kp Q      &kp W      &kp E      &kp R      &kp T      &kp N1    &kp N1    &kp Y      &kp U      &kp I      &kp O      &kp P      &kp BSLH
+   &mt LCTRL ESC  &kp A      &kp S      &kp D      &kp F      &kp G      &kp N1    &kp N1    &kp H      &kp J      &kp K      &kp L      &kp SEMI   &kp SQT
+   &kp LSHIFT     &kp Z      &kp X      &kp C      &kp V      &kp B                          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH   &lt 4 LBKT
+                             &kp LBKT   &kp RBKT   &kp SPACE  &kp LGUI                       &kp N1     &kp ENTER  &kp MINUS  &kp EQUAL
+                             &mo 1  &kp LCTRL &kp LALT   &kp LC(LSHIFT)                      &kp N1     &kp BSPC   &kp LC(SPACE) &mo 3 
             >;
         };  
 
@@ -173,22 +174,24 @@ modcp: mod_copy {
           number_layer {
             label = "NUMBER";
             bindings = <
-   &kp TAB  &kp PLUS AS(N7) AS(N8)  AS(N9)   &kp KP_SLASH    &kp F12 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11
-    &kp ENTER   &kp MINUS  AS(N4) AS(N5)   AS(N6)  &kp KP_DOT        &macro_email_q    &kp F4 &kp F5 &kp F6    &none &none
-   &kp ENTER &kp KP_MULTIPLY  AS(N1) AS(N2) AS(N3) AS(N0)          &macro_phone  &kp F1 &kp F2 &kp F3 &none &none
-  &kp LC(C) &mt  LALT LC(V)  &kp BSPC  &kp SPACE                                 &kp LEFT &kp RIGHT &none &none
-     &trans    &to 0 &to 0   &trans                                             &kp UP &kp DOWN &none &none
+   &kp F1       &kp F2       &kp F3    &kp F4    &kp F5     &kp F6     &kp N1    &kp N1      &kp F7    &kp F8     &kp F9     &kp F10    &kp F11    &kp F12
+   &kp TAB      &none        &none     &none     &none      &none      &kp N1    &kp N1      &none     &kp N7     &kp N8     &kp N9     &none      &none
+   &none        &none        &none     &none     &none      &none      &kp N1    &kp N1      &none     &kp N4     &kp N5     &kp N6     &none      &none
+   &none        &none        &none     &none     &none      &none                            &none     &kp N1     &kp N2     &kp N3     &none      &none
+                             &none     &none     &kp SPACE  &kp LGUI                         &none     &kp ENTER  &kp N0     &kp DOT
+                             &none     &none     &none      &none                            &none     &kp BSPC   &none      &none
             >;
         };
 
         symbol_layer {
             label = "SYMBOL";
             bindings = <
- &kp C_VOL_UP  &kp C_VOL_DN  &kp AMPS  &kp STAR &kp LPAR  &kp RPAR       &none &none &kp UP &none &none &none 
-&kp C_BRI_UP &kp C_BRI_DN &kp DLLR   &kp PRCNT   &kp CARET &kp UNDER     &none &kp LEFT &kp DOWN &kp RIGHT  &none &none 
- &none  &kp GRAVE &kp EXCL  &kp AT   &kp HASH &kp EQUAL     &none &none &none &none  &none &none
- &none &none &kp C_RW &kp C_FF                                      &none &none &none &none 
- &none &none &kp LSHFT  &none                                   &none &none &none &none                                                                                           
+             &none         &none         &none     &none     &none     &none       &none &none   &none     &none     &none     &none      &none     &none
+             &kp C_VOL_UP  &kp C_VOL_DN  &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR    &none &none   &none     &none     &none     &none      &none     &none
+             &kp C_BRI_UP  &kp C_BRI_DN  &kp DLLR  &kp PRCNT &kp CARET &kp UNDER   &none &none   &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &none     &none
+             &none         &kp GRAVE     &kp EXCL  &kp AT    &kp HASH  &kp EQUAL                 &none     &none     &none     &none      &none     &none
+                                         &none     &none     &kp C_RW  &kp C_FF                  &none     &none     &none     &none
+                                         &none     &none     &kp LSHFT &none                     &none     &none     &none     &none                                                                                  
          >;
         };
 
@@ -196,22 +199,24 @@ modcp: mod_copy {
         hotkey_layer {
             label = "HOTKEY";
             bindings = <
- &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR            &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR
-&none	&none	&none	&none	&none	&out OUT_USB	&out OUT_USB	&none	&none	&none	&none	&none
-&none	&none	&none	&none	&none	&out OUT_BLE	&out OUT_BLE	&none	&none	&none	&none	&none
-   &none &none &none &none                                                              &none &none &none &none
-   &none &none &none &none                                                              &none &none &none &none                                                     
+&none        &none        &none        &none        &none        &out OUT_USB    &none &none       &out OUT_USB &none        &none        &none        &none        &none
+ &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR      &none &none       &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR
+ &none        &none        &none        &none        &none        &out OUT_USB    &none &none       &out OUT_USB &none        &none        &none        &none        &none
+ &none        &none        &none        &none        &none        &out OUT_BLE                      &out OUT_BLE &none        &none        &none        &none        &none
+                           &none        &none        &none        &none                             &none        &none        &none        &none
+                           &none        &none        &none        &none                             &none        &none        &none        &none                                                   
             >;
         };
         
             mouse_layer {
             label = "MSE";
-            bindings = <
- &none &none  &none       &mmv MMV_U  &none       &none       &none  &none       &mwh MWH_U  &none       &none  &none
-            &none     &none  &mmv MMV_L  &mmv MMV_D  &mmv MMV_R  &none       &none  &mwh MWH_L  &mwh MWH_D  &mwh MWH_R  &none  &none
-&none &none &mkp LCLK &mkp MCLK &mkp RCLK &none                                            &none &none &none &none &none &none
-   &none &none &none &none                                                              &none &none &none &none
-   &none &none &none &none                                                              &none &none &none &none                                                     
+            bindings = < 
+&none        &none        &none        &&mmv MMV_U        &none      &none    &none    &none       &none   &none        &none        &mwh MWH_U       &none        &none
+ &none        &none      &mmv MMV_L    &mmv MMV_D    &mmv MMV_R      &none   &none    &none       &none  &mwh MWH_L  &mwh MWH_D  &mwh MWH_R      &none  &none 
+ &none        &none        &none        &none        &none        &none    &none &none      &noneB  &none        &none        &none        &none        &none
+ &none        &none        &none        &none        &none        &none                      &none  &none        &none        &none        &none        &none
+                           &none        &none        &none        &none                             &none        &none        &none        &none
+                           &none        &none        &none        &none                             &none        &none        &none        &none
             >;
         };
         
