@@ -165,9 +165,9 @@ modcp: mod_copy {
 &lt 2 TAB      &kp Q         &kp W         &kp E         &kp R         &kp T         &kp LBKT           &kp RBKT        &kp Y         &kp U         &kp I         &kp O           &kp P          &kp BSLH
 &kp CLCK       &kp A         &kp S         &kp D         &kp F         &kp G         &kp PG_UP          &kp PG_DN       &kp H         &kp J         &kp K         &kp L           &kp SEMI       &kp SQT
 &kp LSHIFT     &kp Z         &kp X         &kp C         &kp V         &kp B                                            &kp N         &kp M         &kp COMMA     &kp DOT         &kp FSLH       &kp GRAVE
-&kp LCTRL      &lt 3 ALT     &kp HOME      &kp END       &kp BSPC        &kp SPACE                                      &kp SPACE     &kp ENTER     &kp UP        &kp DOWN        &kp LEFT       &kp RIGHT
-                                                   &kp LCTRL      &kp LGUI                                 &kp DEL     &kp RCTRL       
-                                                   &kp LALT       &lt 1 C                                  &lt 2 V     &kp RALT
+&kp LCTRL      &lt 3 LALT     &kp HOME      &kp END      &kp BSPC        &kp SPACE                                      &kp SPACE     &kp ENTER     &kp UP        &kp DOWN        &kp LEFT       &kp RIGHT
+                                                         &kp LCTRL      &kp LGUI                                        &kp DEL     &kp RCTRL       
+                                                         &kp LALT       &lt 1 C                                         &lt 2 V     &kp RALT
             >;
         };  
 
