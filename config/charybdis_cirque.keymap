@@ -4,155 +4,16 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
-// mouse move settings
-#define MMV_U MOVE_VERT(-650)
-#define MMV_D MOVE_VERT(650)
-#define MMV_L MOVE_HOR(-650)
-#define MMV_R MOVE_HOR(650)
 
-&mmv {    
-        time-to-max-speed-ms = <500>;
-        acceleration-exponent=<1>;
-};
-
-// mouse wheel settings
-#define MWH_U SCROLL_VERT(15)
-#define MWH_D SCROLL_VERT(-15)
-#define MWH_L SCROLL_HOR(-15)
-#define MWH_R SCROLL_HOR(15)
-
-&mwh {    
-        time-to-max-speed-ms = <2000>;
-        acceleration-exponent=<0>;
-};
 
 #define DEFAULT 0
 #define NUMBER  1
 #define SYMBOL  2
 #define HOTKEY  3
-#define MSE     4
-
 #define AS(keycode) &as LS(keycode) keycode
 
 / {
-        behaviors {
-        td0: tap_dance_0 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_0";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp ESC>, <&kp TAB>;
-        };
-    };  
-
-         behaviors {
-       as: auto_shift {
-        compatible = "zmk,behavior-hold-tap";
-        label = "AUTO_SHIFT";
-        #binding-cells = <2>;
-        tapping-term-ms = <200>;
-        quick-tap-ms = <0>;
-        flavor = "tap-preferred";
-        bindings = <&kp>, <&kp>;
-                };             
-modcp: mod_copy {
-        compatible = "zmk,behavior-mod-morph";
-        label = "MOD_COPY";
-        #binding-cells = <0>;
-        bindings = <&as LS(C) C>, <&kp C>;
-        mods = <(LGUI | RGUI)>;
-};
-        };
-
-
-    macros {
-        macro_phone: macro_phone {
-            // 1351
-            label = "MACRO_PHONE";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = < &kp N1 &kp N3 &kp N5  &kp N1>
-                ;
-        };
-        macro_email_q: macro_email_q {
-            // 2894512440@qq.com
-            label = "MACRO_EMAIL_QQ";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings 
-                = < &kp N2 &kp N8 &kp N9 &kp N4 &kp N5 &kp  N1 &kp N2 &kp N4 &kp N4 &kp N0 
-                    &kp AT &kp Q &kp Q &kp DOT  &kp C &kp O &kp M>
-                ;
-        };
-        macro_email_g: macro_email_g {
-            // 135115
-            compatible = "zmk,behavior-macro";
-            label = "MACRO_EMAIL_GMAIL";
-            #binding-cells = <0>;
-            bindings
-                = < &kp N1 &kp N3 &kp N5  &kp N1 &kp N1 &kp N5 > ;
-        };
-       
-    };
-    
-     combos {
-        compatible = "zmk,combos";
-        combo_esc {
-            timeout-ms = <50>;
-            key-positions = <2 38>;
-            bindings = <&kp TAB>;
-        };
-             combo_rgui {
-            timeout-ms = <50>;
-            key-positions = <3 38>;
-            bindings = <&kp CAPS>;
-        };
-        
-         combo_LSHFT {
-            timeout-ms = <50>;
-            key-positions = <14 38>;
-            bindings = <&kp  LSHFT>;
-        };
-       
-         combo_2 {
-            timeout-ms = <50>;
-            key-positions = <15 38>;
-            bindings = <&kp N2 >;
-        };
-         combo_3 {
-            timeout-ms = <50>;
-            key-positions = <16 38>;
-            bindings = <&kp N3>;
-        };
-            combo_LGUI {
-            timeout-ms = <50>;
-            key-positions = <26 38>;
-            bindings = <&kp LGUI>;
-        };
-              combo_GUI {
-            timeout-ms = <50>;
-            key-positions = <27 38>;
-            bindings = <&tog 1>;
-        };
-                  combo_G {
-            timeout-ms = <50>;
-            key-positions = <14 39>;
-            bindings = <&mo 4>;
-        };
-                  combo_GU {
-            timeout-ms = <50>;
-            key-positions = <14 39>;
-            bindings = <&mo 2>;
-        };
-                      combo_m {
-            timeout-ms = <50>;
-            key-positions = <21 41>;
-            bindings = <&mo 4>;
-        };
-        
-  
-   };
+      
 
 
 
@@ -165,9 +26,9 @@ modcp: mod_copy {
 &lt 2 TAB      &kp Q         &kp W         &kp E         &kp R         &kp T         &kp LBKT           &kp RBKT        &kp Y         &kp U         &kp I         &kp O           &kp P          &kp BSLH
 &kp CLCK       &kp A         &kp S         &kp D         &kp F         &kp G         &kp PG_UP          &kp PG_DN       &kp H         &kp J         &kp K         &kp L           &kp SEMI       &kp SQT
 &kp LSHIFT     &kp Z         &kp X         &kp C         &kp V         &kp B                                            &kp N         &kp M         &kp COMMA     &kp DOT         &kp FSLH       &kp GRAVE
-&kp LCTRL      &lt 3 LALT     &kp HOME      &kp END      &kp BSPC        &kp SPACE                                      &kp SPACE     &kp ENTER     &kp UP        &kp DOWN        &kp LEFT       &kp RIGHT
-                                                         &kp LCTRL      &kp LGUI                                        &kp DEL     &kp RCTRL       
-                                                         &kp LALT       &lt 1 C                                         &lt 2 V     &kp RALT
+&kp LCTRL      &lt 3 LALT     &kp HOME      &kp END      &kp BSPC       &kp SPACE                                       &kp SPACE     &kp ENTER     &kp UP        &kp DOWN        &kp LEFT       &kp RIGHT
+                                                         &mt LCTRL c    &kp LGUI                                        &kp DEL     &mt RCTRL v      
+                                                         &kp LALT       &lt 1 LEFT                                      &lt 2 RIGHT     &kp RALT
             >;
         };  
 
@@ -175,13 +36,13 @@ modcp: mod_copy {
           number_layer {
             label = "NUMBER";
             bindings = <
-&kp F1         &kp F2        &kp F3        &kp F4         &kp F5        &kp F6       &none                  &none           &kp F7        &kp F8        &kp F9        &kp F10         &kp F11        &kp F12
-&none          &none         &kp UP        &none          &none         &none        &none                  &none           &none         &none         &none         &none           &none          &none
+&kp F1         &kp F2        &kp F3        &kp F4         &kp F5        &kp F6       &none                  &none            &kp F7        &kp F8        &kp F9        &kp F10         &kp F11        &kp F12
+&none          &none         &kp UP        &none          &none         &none        &none                  &none            &none         &none         &none         &none           &none          &none
 &none          &kp LEFT      &kp DOWN      &kp RIGHT      &kp HOME      &kp PG_UP     &none                  &none           &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT       &none          &none
 &none          &none         &none         &none          &kp END       &kp PG_DN                                            &none         &none         &none         &none           &none          &none
-&kp C_PLAY     &kp C_PAUSE   &kp C_PREV    &kp C_NEXT     &none         &none                                                 &none         &none         &kp C_BRI_DEC &kp C_BRI_INC   &kp C_VOL_DN   &kp C_VOL_UP 
-                                                                 &none     &kp BSPC                          &kp BSPC   &none
-                                                                 &none     &none                             &none      &none  
+&kp C_PLAY     &kp C_PAUSE   &kp C_PREV    &kp C_NEXT     &none         &none                                                &none         &none         &kp C_BRI_DEC &kp C_BRI_INC   &kp C_VOL_DN   &kp C_VOL_UP 
+                                                        &none     &kp BSPC                                                   &kp BSPC   &none
+                                                          &none     &none                                                    &none      &none  
             >;
         };
 
@@ -205,23 +66,10 @@ modcp: mod_copy {
  &none        &none        &none        &none        &none        &out OUT_USB    &none &none       &out OUT_USB &none        &none        &none        &none        &none
  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR      &none &none       &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR
  &none        &none        &none        &none        &none        &out OUT_USB    &none &none       &out OUT_USB &none        &none        &none        &none        &none
- &none        &none        &none        &none        &none        &out OUT_BLE                      &out OUT_BLE &none        &none        &none        &none        &none
- &none        &none        &none        &none        &none     &none                                &none        &none      &none        &none        &none        &none
+ &none        &none        &mmv MMV_U   &none        &none        &out OUT_BLE                      &out OUT_BLE &none        &none        &none        &none        &none
+ &none        &mmv MMV_L   &mmv MMV_D   &mmv MMV_R        &none     &none                                &none        &none      &none        &none        &none        &none
                                                       &none     &none                               &none     &none       
                                                       &none     &none                               &none     &none                                                
-            >;
-        };
-        
-            mouse_layer {
-            label = "MSE";
-            bindings = < 
-&none        &none        &none        &mmv MMV_U        &none      &none    &none    &none    &none   &none       &none        &mwh MWH_U    &none        &none
- &none        &none      &mmv MMV_L    &mmv MMV_D    &mmv MMV_R     &none    &none    &none    &none   &mwh MWH_L  &mwh MWH_D   &mwh MWH_R    &none        &none 
- &none        &none        &none        &none        &none          &none    &none    &none    &none   &none       &none        &none         &none        &none
- &none        &none        &none        &none        &none          &none                      &none   &none       &none        &none         &none        &none
- &none        &none        &none     &none           &none          &none                      &none     &none      &none        &none         &none        &none
-                                                         &none     &none                       &none     &none       
-                                                         &none     &none                       &none     &none          
             >;
         };
         
