@@ -27,8 +27,8 @@
 &kp CLCK       &kp A         &kp S         &kp D         &kp F         &kp G         &kp PG_UP          &kp PG_DN       &kp H         &kp J         &kp K         &kp L           &kp SEMI       &kp SQT
 &kp LSHIFT     &kp Z         &kp X         &kp C         &kp V         &kp B                                            &kp N         &kp M         &kp COMMA     &kp DOT         &kp FSLH       &kp GRAVE
 &kp LCTRL      &lt 3 LALT    &kp HOME      &kp END       &kp BSPC      &kp SPACE                                        &kp SPACE     &kp ENTER     &kp UP        &kp DOWN        &kp LEFT       &kp RIGHT
-                                                         &mt LCTRL C   &kp LGUI                                         &kp DEL       &mt RCTRL V       
-                                                         &kp LALT      &lt 1 LEFT                                       &lt 2 RIGHT     &kp RALT
+                             &kp LALT      &lt 1 LEFT    &mt LCTRL C   &kp LGUI                                         &kp DEL       &mt RCTRL V   &lt 2 RIGHT     &kp RALT    
+                                                                                               
             >;
         };  
 
